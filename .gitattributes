@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Los archivos originales del dataset se guardan tal cual
+data/wdbc.* -text
+*.png binary
