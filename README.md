@@ -43,9 +43,15 @@ jupyter notebook Clasificacion_Tumores_KNN_SVM_MLP.ipynb
 | Respuestas a las 4 preguntas | 7 |
 | Conclusión | 8 |
 
-## Resultados
+## Resultados (conjunto de prueba, 114 tumores)
 
-La tabla comparativa, las respuestas a las preguntas y la conclusión están en las secciones 6 a 8 del notebook (PR 5).
+| Modelo | Mejores hiperparámetros | Exactitud | Precisión | Exhaustividad | F1 | AUC | Malignos no detectados |
+|---|---|---|---|---|---|---|---|
+| KNN | k = 3, Manhattan, votación uniforme | 0.965 | 1.000 | 0.905 | 0.950 | 0.974 | 4 de 42 |
+| SVM | RBF, C = 10, gamma = "scale" | 0.974 | 1.000 | 0.929 | 0.963 | 0.993 | 3 de 42 |
+| **MLP** | **1 capa de 16 neuronas, alpha = 3** | **0.982** | **1.000** | **0.952** | **0.976** | **0.998** | **2 de 42** |
+
+El **MLP** fue el mejor en todas las métricas y en validación cruzada (F1 de 0.973). Ningún modelo marcó un benigno como maligno; todos sus errores son malignos no detectados, que en un diagnóstico es el error más grave, por eso la métrica que más pesa es la exhaustividad.
 
 ## Equipo y PR
 
